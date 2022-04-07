@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW COMPLAINT AND FORWARD</title>
+</head>
+<body>
+<table align="center" border="2">
+	<tr>
+		<td>USER ID</td>
+		<td>COMPLAINT</td>
+		<td>DATE</td>
+		<td>TIME</td>
+		
+
+	</tr>
+    {% for i in obval %}
+	<tr>
+		<td>{{ i.u_id }}</td>
+		<td>{{ i.complaint }}</td>
+		<td>{{ i.date }}</td>
+		<td>{{ i.time }}</td>
+		<td><a href="">FORWARD TO VENDOR</a></td>
+	</tr>
+    {% endfor %}
+</table>
+</body>
+</html>

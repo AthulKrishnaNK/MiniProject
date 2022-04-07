@@ -1,0 +1,32 @@
+{% extends 'temp/index.html' %}
+{% block base %}
+<h1 align="center">User</h1>
+<table align="center">
+	<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+		<tr align="center">
+			<td height="50">NAME</td>
+			<td height="50"><input type="text" name="name" required="" class="form-control" style="color: black"></td>
+		</tr>
+		<tr align="center">
+			<td height="50">EMAIL</td><td> <input type="email" name="email" class="form-control" style="color: black"></td>
+		</tr>
+		<tr align="center">
+			<td height="50">PHONE NO </td><td><input type="number" name="mobileno" class="form-control" style="color: black"> </td>
+		</tr>
+		<tr align="center">
+			<td height="50">ADDRESS</td>
+			<td height="50"><textarea name="address" rows="6" required="" class="form-control" style="color: black"></textarea></td>
+		</tr>
+		<tr align="center">
+			<td height="50">PASSWORD</td><td><input type="password" name="password" class="form-control" style="color: black"></td>
+		</tr>
+
+		<td></td>
+		<td height="50"><input type="submit" name="sub" value="REGISTER" class="btn btn-primary"></td>
+        </tr>
+		
+	</form>
+	
+</table>
+{% endblock %}

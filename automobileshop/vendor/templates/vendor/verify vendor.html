@@ -1,0 +1,30 @@
+{% extends 'temp/admin_home.html' %}
+{% block base %}
+	<h1 align="center"> VERIFY VENDORS</h1>
+	<table align="center" border="2">
+		<tr align="center">
+			<td>NAME</td>
+			<td>EMAIL</td>
+			<td>PHONE</td>
+
+			<td>IMAGE</td>
+{#            <td>PASSWORD</td>#}
+			<td>ADDRESS</td>
+            <td>STATUS</td>
+		</tr>
+        {% for i in obval %}
+		<tr align="center">
+			<td>{{ i.name }}</td>
+			<td>{{ i.email }}</td>
+			<td>{{ i.phone }}</td>
+
+			<td>{{ i.image }}</td>
+{#			<td>{{ i.password }}</td>#}
+            <td>{{ i.address }}</td>
+            	<td>{{ i.status }}</td>
+            <td><a href="{% url 'apv' idd=i.v_id %}" class="btn btn-primarys">APPROVE</a> </td>
+        <td><a href="{% url 'rejv' idd=i.v_id %}" class="btn btn-danger">REJECT</a> </td>
+        </tr>
+        {% endfor %}
+	</table>
+{% endblock %}

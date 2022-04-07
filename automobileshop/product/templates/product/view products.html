@@ -1,0 +1,36 @@
+{% extends 'temp/user_home.html' %}
+{% block base %}
+	<h1 align="center"> VIEW PRODUCT</h1>
+    <form method="post">
+    <table align="center">
+        {% csrf_token %}
+
+    <tr>
+				<td>Product:</td>
+				<td><input type="text" name="pn" required="" style="color: black"></td>
+				<td><input type="submit" name="search" value="SEARCH" class="btn btn-primary"></td>
+			</tr>
+    </table>
+	<table border="2" align="center">
+		<tr align="center">
+
+			<td>PRODUCT NAME</td>
+			<td>IMAGE</td>
+
+		</tr>
+    {% if obval %}
+        {% for i in obval %}
+		<tr align="center">
+
+			<td>{{ i.name }}</td>
+
+			<td><img src="/static/{{ i.img }}" style="height: 100px;width: 100px"></td>
+
+        <td><a href="{% url 'viewp' idd=i.p_id %}">View Product</a> </td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+	</table>
+    </form>
+
+{% endblock %}

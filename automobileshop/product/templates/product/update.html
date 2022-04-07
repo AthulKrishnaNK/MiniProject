@@ -1,0 +1,51 @@
+{% extends 'temp/vendor_home.html' %}
+{% block base %}
+	<h1 align="center">ADD PRODUCT</h1>
+	<table align="center">
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<tr>
+				<td height="50">PRODUCT NAME</td>
+				<td><input type="text" name="pname"  style="color: black" value="{{ ok.name }}"></td>
+			</tr>
+			<tr>
+				<td height="50">VEHICLE NAME</td>
+				<td><input type="text" name="vname"  style="color: black" value="{{ ok.vehiclename }}"></td>
+			</tr>
+			<tr>
+				<td height="50">COMPANY NAME</td>
+				<td><input type="text" name="cname"  style="color: black" value="{{ ok.companyname }}"></td>
+			</tr>
+			<tr>
+				<td height="50">SPARE NAME</td>
+				<td><input type="text" name="sname"  style="color: black" value="{{ ok.spare_name }}"></td>
+			</tr>
+			<tr>
+				<td height="50">WHOLE SALE PRICE</td>
+				<td><input type="text" name="wholeprice"  style="color: black" value="{{ ok.wholesale_price }}"></td>
+			</tr>
+			<tr>
+				<td height="50">QUANITY</td>
+				<td><input type="text" name="quantity"  style="color: black" value="{{ ok.quantity }}" ></td>
+			</tr>
+			<tr>
+				<td height="50">IMAGE</td>
+                <td>
+                    <img src="/static/{{ ok.img }}" style="height: 100px;width: 100px"></td>
+{#				<td><input type="file" name="prim"  style="color: black" value="/static/s{{ ok.img }}"></td>#}
+			</tr>
+			<tr>
+				<td height="50">RETAIL PRICE</td>
+				<td><input type="text" name="retail"  style="color: black" value="{{ ok.retail_price }}"></td>
+			</tr>
+			<tr>
+				<td height="50">DISCRIPTION</td>
+				<td><input type="text" name="discription"  style="color: black" value="{{ ok.description }}"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td height="50"><input type="submit" name="" value="ADD" class="btn btn-primary"></td>
+			</tr>
+		</form>
+	</table>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'temp/user_home.html' %}
+{% block base %}
+<table align="center" border="2">
+
+
+<a href="/orders/payee/" class="btn btn-primary">Checkout</a>
+	<tr>
+
+		<td>PRODUCT</td>
+{#        <td>V ID</td>#}
+		<td>STATUS</td>
+{#		<td>TOTAL</td>#}
+		<td>QUANTITY</td>
+		
+
+	</tr>
+
+    {% for i in obval %}
+	<tr>
+{#		<td>{{ i.o_id }}</td>#}
+		<td>{{ i.p.name }}</td>
+{#		<td>{{ i.v_id }}</td>#}
+		<td>{{ i.status }}</td>
+{#		<td>{{ i.total }}</td>#}
+        <td>{{ i.quantity }}</td>
+{#    <td><a href="{% url 'place' idd=i.o_id %}">Place Order</a> </td>#}
+	</tr>
+    {% endfor %}
+</table>
+{% endblock %}

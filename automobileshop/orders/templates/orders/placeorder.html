@@ -1,0 +1,18 @@
+{% extends 'temp/user_home.html' %}
+{% block base %}
+	<h1 align="center">Place order</h1>
+	<table align="center">
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+			<tr>
+				<td height="50">Address</td>
+				<td><input type="text" name="add" required="" style="color: black"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td height="50"><input type="submit" name="" value="Place order" class="btn btn-primary"></td>
+			</tr>
+		</form>
+	</table>
+{% endblock %}

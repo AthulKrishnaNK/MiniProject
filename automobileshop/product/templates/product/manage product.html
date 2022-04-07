@@ -1,0 +1,36 @@
+{% extends 'temp/vendor_home.html' %}
+{% block base %}
+	<h1 align="center"> MANAGE PRODUCT</h1>
+	<table border="2" align="center">
+       <tr>
+           <form method="post">
+                {% csrf_token %}
+
+            <td colspan="10"><input type="submit" value="Add New" class="btn btn-primary"></td>
+               </form>
+        </tr>
+		<tr align="center">
+            <td>P_ID</td>
+			<td>PRODUCT NAME</td>
+			<td>WHOLE SALE PRICE</td>
+			<td>QUANTITY</td>
+			<td>IMAGE</td>
+			<td>RETAIL PRICE</td>
+			<td>DISCRIPTION</td>
+		</tr>
+		{% for i in obvals %}
+		<tr align="center">
+            <td>{{ i.p_id }}</td>
+			<td>{{ i.name }}</td>
+			<td>{{ i.wholesale_price }}</td>
+			<td>{{ i.quantity }}</td>
+			<td>{{ i.img }}</td>
+			<td>{{ i.retail_price }}</td>
+			<td>{{ i.description }}</td>
+            <td><a href="{% url 'uppro' idd=i.p_id %}">EDIT</a> </td>
+            <td><a href="{% url 'delp' idd=i.p_id %}">DELETE</a> </td>
+        {% endfor %}
+
+        </tr>
+	</table>
+{% endblock %}

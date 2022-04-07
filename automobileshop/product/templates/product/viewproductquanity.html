@@ -1,0 +1,47 @@
+{% extends 'temp/user_home.html' %}
+{% block base %}
+	<h1 align="center">View PRODUCT</h1>
+	<table align="center">
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+			<tr>
+				<td >VEHICLE NAME</td>
+				<td><input type="text" name="vname" required="" style="color: black" value="{{ ok.vehiclename }}" readonly=""></td>
+			</tr>
+			<tr>
+				<td >VEHICLE COMPANY</td>
+				<td><input type="text" name="cname" required="" style="color: black" value="{{ ok.companyname }}" readonly=""></td>
+			</tr>
+			<tr>
+				<td>SPARE COMPANY NAME</td>
+				<td><input type="text" name="sname" required="" style="color: black" value="{{ ok.spare_name }}" readonly=""></td>
+			</tr>
+			<tr>
+				<td>WHOLE SALE PRICE</td>
+				<td><input type="text" name="wholeprice" required="" style="color: black" value="{{ ok.wholesale_price }}" readonly=""></td>
+			</tr>
+
+			<tr>
+				<td >IMAGE</td>
+				<td><img src="/static/{{ ok.img }}"></td>
+			</tr>
+			<tr>
+				<td>RETAIL PRICE</td>
+				<td><input type="text" name="retail" required="" style="color: black" value="{{ ok.retail_price }}" readonly=""></td>
+			</tr>
+			<tr>
+				<td>DISCRIPTION</td>
+				<td><input type="text" name="discription" required="" style="color: black" value="{{ ok.description }}" readonly=""></td>
+			</tr>
+            <tr>
+				<td height="50">QUANITY</td>
+				<td><input type="text" name="qn" required="" style="color: black"  ></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td height="50"><input type="submit" name="" value="ADD" class="btn btn-primary"></td>
+			</tr>
+		</form>
+	</table>
+{% endblock %}

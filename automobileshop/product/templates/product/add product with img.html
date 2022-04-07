@@ -1,0 +1,49 @@
+{% extends 'temp/vendor_home.html' %}
+{% block base %}
+	<h1 align="center">ADD PRODUCT</h1>
+	<table align="center">
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<tr>
+				<td height="50">PRODUCT NAME</td>
+				<td><input type="text" name="pname" required="" style="color: black"></td>
+			</tr>
+			<tr>
+				<td height="50">VEHICLE</td>
+				<td><input type="text" name="vname" required="" style="color: black"></td>
+			</tr>
+			<tr>
+				<td height="50">VEHICLE COMPANY</td>
+				<td><input type="text" name="cname" required="" style="color: black"></td>
+			</tr>
+			<tr>
+				<td height="50">PRODUCT COMPANY NAME</td>
+				<td><input type="text" name="sname" required="" style="color: black"></td>
+			</tr>
+			<tr>
+				<td height="50">WHOLE SALE PRICE</td>
+				<td><input type="text" name="wholeprice" required="" style="color: black"></td>
+			</tr>
+			<tr>
+				<td height="50">QUANITY</td>
+				<td><input type="text" name="quantity" required="" style="color: black" ></td>
+			</tr>
+			<tr>
+				<td height="50">IMAGE</td>
+				<td><input type="file" name="image" required="" style="color: black"></td>
+			</tr>
+			<tr>
+				<td height="50">RETAIL PRICE</td>
+				<td><input type="text" name="retail" required="" style="color: black"></td>
+			</tr>
+			<tr>
+				<td height="50">DISCRIPTION</td>
+				<td><input type="text" name="discription" required="" style="color: black"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td height="50"><input type="submit" name="" value="ADD" class="btn btn-primary"></td>
+			</tr>
+		</form>
+	</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add product</title>
+</head>
+<body>
+	<h1 align="center">BUY</h1>
+	<table align="center">
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<tr>
+				<td height="50">ADDRESS</td>
+				<td><input type="text" name="address" required="" ></td>
+			</tr>
+			<tr>
+				<td height="50">QUANTITY</td>
+				<td><input type="text" name="quantity" required="" ></td>
+			</tr>
+			<tr>
+				<tr>
+				<td></td>
+				<td height="50"><input type="submit" name="" value="BUY" class="btn btn-primary"></td>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>
